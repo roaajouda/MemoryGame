@@ -1,0 +1,94 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: tahoma,Arial;
+}
+.control {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: rgba(3, 169, 244, .9);
+    top: 0;
+    left: 0;
+}
+.control span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #f44336;
+    color: #fff;
+    padding: 15px 25px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 6px;
+    cursor: pointer;
+    
+}
+.game_info {
+    width: 1080px;
+    margin: 20px auto;
+    background-color: #f6f6f6;
+    padding: 20px;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    overflow: hidden;
+    border: 2px solid #2196f3;
+}
+.back img {
+    width: 200px;
+    height: 180px;
+    margin-top: 10px;
+}
+.game_memory {
+    display: flex;
+    width: 1100px;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+.game_memory.pointer {
+    pointer-events: none;
+}
+.memory_block {
+    height: 200px;
+    transition: transform .5s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    position: relative;
+    flex: 1 0 200px;
+    margin: 0 10px 20px;
+}
+.memory_block .front {
+    background-color: #222;
+    line-height: 200px;
+    border: 5px solid #2196f3;
+}
+.memory_block .front img {
+    width: 150px;
+    height: 150px;
+    margin-top: 25px;
+    opacity: .7;
+    
+}
+.memory_block .back {
+    background-color: #607d8b;
+    transform: rotateY(180deg);
+}
+.memory_block .face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    backface-visibility: hidden;
+    /*backface-visibility: انو لو في 2 ديف واحد قدام و واحد ورى بخلي الي ورى اي الي بعد في اتشتيامال يختفي وهاي تستعمل مع الروتيت */
+}
+.memory_block.isFlibed {
+    transform: rotateY(180deg);
+}
+.memory_block.checked {
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
